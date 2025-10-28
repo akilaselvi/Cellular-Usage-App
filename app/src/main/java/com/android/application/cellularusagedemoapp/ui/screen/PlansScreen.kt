@@ -1,6 +1,7 @@
 package com.android.application.cellularusagedemoapp.ui.screen
 
-import android.widget.Toast
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,29 +18,37 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.android.application.cellularusagedemoapp.data.Plan
+import com.android.application.cellularusagedemoapp.util.showShortToast
 import com.android.application.cellularusagedemoapp.viewmodel.UsageViewModel
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun PlansScreen(nav: NavController, vm: UsageViewModel = hiltViewModel()) {
     val plans = vm.getPlans()
 
     Column(Modifier.padding(16.dp)) {
         Spacer(Modifier.height(8.dp))
-        LazyColumn { items(plans) { plan ->
-            PlanItem(plan,nav)
-        }
+        LazyColumn {
+            items(plans) { plan ->
+                PlanItem(plan, nav)
+            }
         }
     }
 }
 
 @Composable
-fun PlanItem(plan: Plan, nav: NavController){
-    Card(modifier =  Modifier.fillMaxWidth().padding(vertical = 6.dp).clickable { }, elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)) {
+fun PlanItem(plan: Plan, nav: NavController) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 6.dp)
+            .clickable { },
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
         Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {
                 Text(plan.name)
@@ -47,7 +56,9 @@ fun PlanItem(plan: Plan, nav: NavController){
                 Text("Data: ${plan.data}")
                 Text("Minutes: ${plan.minutes} SMS: ${plan.sms}")
             }
-            Button(onClick = { Toast.makeText(nav.context, "Subscribed to ${plan.name}", Toast.LENGTH_SHORT).show() }) {
+            Button(onClick = {
+                nav.context.showShortToast("Subscribed to ${plan.name}")
+            }) {
                 Text("Subscribe")
             }
         }

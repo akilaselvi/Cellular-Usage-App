@@ -23,12 +23,20 @@ fun UsageItem(label: String, used: Float, quota: Float, onClick: (() -> Unit)? =
     val anim by animateFloatAsState(targetValue = ratio)
 
 
-    Column(Modifier.fillMaxWidth().clickable(enabled = onClick != null) { onClick?.invoke() }) {
+    Column(Modifier
+        .fillMaxWidth()
+        .clickable(enabled = onClick != null) { onClick?.invoke() }) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
             Text(label)
             Text("${used.toInt()} / ${quota.toInt()}")
         }
-        LinearProgressIndicator(progress = anim, modifier = Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(4.dp)))
+        LinearProgressIndicator(
+            progress = anim,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(8.dp)
+                .clip(RoundedCornerShape(4.dp))
+        )
         Spacer(Modifier.height(8.dp))
     }
 }

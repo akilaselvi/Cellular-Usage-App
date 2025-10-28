@@ -23,7 +23,6 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavHostController) {
-    // Optional: animate logo or show app name
     LaunchedEffect(Unit) {
         delay(2000) // 2-second splash delay
         navController.navigate(Screen.Main.route) {

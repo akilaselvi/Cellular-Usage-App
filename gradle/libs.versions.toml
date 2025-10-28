@@ -40,7 +40,7 @@ androidx-lifecycle-viewmodel-compose = {group="androidx.lifecycle", name="lifecy
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutine-test" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
-
+androidx-datastore-preferences = {group= "androidx.datastore.preferences", name = "preferences-core", version.ref = "coreKtx"}
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

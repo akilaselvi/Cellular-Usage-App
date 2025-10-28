@@ -67,6 +67,13 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
     testImplementation(kotlin("test"))
+    // Jetpack DataStore (Preferences)
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
+// Kotlin coroutines (needed for DataStore)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation("com.google.firebase:firebase-messaging:24.0.2")
+    implementation("com.google.firebase:firebase-analytics:22.0.2")
 }
 
 kapt {

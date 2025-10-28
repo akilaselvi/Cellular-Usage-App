@@ -40,7 +40,6 @@ fun PromoCard(title: String, desc: String, onClick: () -> Unit) {
             Column {
                 Text(title, style = MaterialTheme.typography.titleMedium, color = Color.Black)
                 Text(text = desc, style = MaterialTheme.typography.bodySmall, color = Color.Black)
-//                Text(text = description, style = MaterialTheme.typography.bodySmall, color = Color.Gray)
             }
             Button(
                 onClick = onClick,
@@ -52,13 +51,15 @@ fun PromoCard(title: String, desc: String, onClick: () -> Unit) {
     }
 }
 
-@Preview(    showBackground = true,
+@Preview(
+    showBackground = true,
     showSystemUi = true,
-    name = "Dashboard Preview")
+    name = "Dashboard Preview"
+)
 @Composable
-fun PromotonCard(){
-    MaterialTheme{
-        PromoCard("Title", "Description"){
+fun PromotonCard() {
+    MaterialTheme {
+        PromoCard("Title", "Description") {
 
         }
     }

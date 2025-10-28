@@ -1,5 +1,7 @@
 package com.android.application.cellularusagedemoapp.ui.screen
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,6 +27,7 @@ import com.android.application.cellularusagedemoapp.R
 import com.android.application.cellularusagedemoapp.ui.NavHost.Screen
 import com.android.application.cellularusagedemoapp.ui.NavHost.TopBar
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()

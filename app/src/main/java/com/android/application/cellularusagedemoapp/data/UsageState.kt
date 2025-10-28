@@ -3,7 +3,7 @@ package com.android.application.cellularusagedemoapp.data
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class UsageState (
+data class UsageState(
     val dataUsedMb: Long,
     val dataQuotaMb: Long,
     val minutesUsed: Int,
@@ -13,8 +13,8 @@ data class UsageState (
     val balance: Double,
     val renewalDateMillis: Long,
     val lastUpdated: Long = System.currentTimeMillis()
-){
-    companion object{
-        fun empty() = UsageState(0,0,0,0,0,0,0.0,0L,0L)
+) {
+    companion object {
+        fun empty() = UsageState(0, 0, 0, 0, 0, 0, 0.0, 0L, 0L)
     }
 }

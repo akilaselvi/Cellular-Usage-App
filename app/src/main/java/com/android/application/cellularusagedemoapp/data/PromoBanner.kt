@@ -3,7 +3,6 @@ package com.android.application.cellularusagedemoapp.data
 import kotlinx.serialization.Serializable
 
 
-
 @Serializable
 data class PromoBanner(
     val id: String,

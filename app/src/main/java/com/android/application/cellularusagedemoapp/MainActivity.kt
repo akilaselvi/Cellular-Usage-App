@@ -28,34 +28,17 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CellularUsageDemoAppTheme {
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.onSecondary) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.onSecondary
+                ) {
                     val navController = rememberNavController()
 
                     AppNavHost(navController = navController)
-//                    NavHost(navController = nav, startDestination = "dashboard") {
-//                        composable("dashboard") { DashboardScreen(nav) }
-//                        composable("plans") { PlansScreen(nav) }
-//                        composable("settings") { SettingsScreen(nav) }
-//                    }
+
                 }
 
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CellularUsageDemoAppTheme {
-        Greeting("Android")
     }
 }
