@@ -24,14 +24,18 @@ The goal is to demonstrate clean architecture, reactive state management using *
   - Implemented via `NavHost` with sealed class routes
 - **Mock Data**
   - static mock used for usage and plan details
-
+- **Notification**
+  - Data usage notification    
 ---
 
-### 🏗️ Architecture
+### Architecture
 - **MVVM (Model–View–ViewModel)** pattern
 - **Model:** `UsageState.kt`, `PromoBanner.kt`, `Plan.kt`
 - **ViewModel:** Handles state and business logic
 - **View:** Compose UI screens (Dashboard, Plans, Settings)
 - **Navigation:** Managed via sealed `Screen` class
 - **Dependency Injection:** Optional Hilt for scalability
-- **Testing:** Unit tests for ViewModels using `runTest` 
+- **Testing:** Unit tests for ViewModels using `runTest`
+
+
+
